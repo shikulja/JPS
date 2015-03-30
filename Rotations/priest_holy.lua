@@ -72,6 +72,9 @@ jps.registerRotation("PRIEST","HOLY",function()
 		{ "Circle of Healing", unitsBelow70  > 3, "player" },
 		{ "Prayer of Healing", unitsBelow50  > 3, "player" },
 		{ "Prayer of Healing", unitsBelow50  > 3, Priest_Target },
+		-- procs
+		-- Необходим талант Свет и тьма --   -- При проке Пробуждение Света скасковать Вспышка света --
+		{ 2061, jps.buffStacks(114255, player) == 1 , Priest_Target },
 		
 		-- filler
 		{ "Heal", health_deficiency > (getaverage_heal("Heal") + getaverage_heal("Renew")), Priest_Target }
